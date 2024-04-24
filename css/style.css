@@ -11,18 +11,13 @@ body {
 h1{
     text-align: center;
     margin-top: 20px;
-    color: hotpink;
+    color: #d40767;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 45px;
     padding-bottom: 20px;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
 .about {
     background-color: #fff;
     padding: 20px;
@@ -43,51 +38,64 @@ h1{
 
 .about li::before {
     content: "🍋";
-    margin-right: 0.5em;
+    margin-right: 8px;
 }
-.all {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .info {
     flex: 1;
 }
 
-.navbar a {
-    display: block;
-    color: #dff3e3;
-    text-align: center;
-    padding: 15px 30px; 
-    text-decoration: none;
-    margin-right: 20px; 
-    margin-left: 20px;
-    border-radius: 10px; 
-    background-color: #d40767; 
+.navbar {
+  list-style-type: none;
+  margin: 10px;
+  overflow: hidden;
+  background-color: #d40767;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
-.navbar a.active {
-    background-color: #e5bedd;
-    color: #8b0453;
-    text-decoration: underline;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 13px 30px; /* Match the padding of non-active buttons */
+
+.navbar li {
+  display: inline;
 }
 
-.navbar a.active::before {
-    content: "\1F34B"; /* Lemon emoji */
-    position: relative;
-    top: 2px;
-    margin-right: 5px;
-    font-size: 20px;
+.navbar li a {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.navbar a:hover {
-    background-color: #e5bedd;
-    color: #8b0453;
+.navbar li a.active {
+  background-color: #e5bedd;
+  color: #8b0453;
+  text-decoration: underline;
+  font-weight: bold;
+  text-transform: uppercase;
 }
+
+.navbar li a.active::before {
+  content: "\1F34B"; /* Lemon emoji */
+  position: relative;
+  top: 2px; /* Adjust vertical alignment if needed */
+  margin-right: 5px; /* Adjust spacing from the link text */
+  font-size: 20px; /* Adjust the size of the emoji */
+} 
+
+.navbar a:hover{
+  background-color: #e5bedd;
+  color: #8b0453;
+}
+
+.navbar a{
+  text-decoration: none;
+  color: #e5bedd;
+}
+
 
 .welcome {
     background-color: #fff;
@@ -122,13 +130,6 @@ h1{
     
     }
 
-.timeline {
-    list-style: none;
-    padding: 0;
-    margin: 50px auto;
-    max-width: 800px;
-    position: relative;
-}
 
 .reviews {
     display: grid;
@@ -204,36 +205,9 @@ h1{
   }
 
 
-.timeline-item {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-bottom: 30px;
-}
-.timeline-item::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-.timeline-date {
-    font-weight: bold;
-    color: #333;
-}
-.timeline-content {
-    margin-left: 20px;
-}
-.timeline-content h2 {
-    margin-top: 0;
-}
-.timeline-content p {
-    margin-bottom: 0;
-}
-
 .container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto ;
     gap: 20px;
 }
 
@@ -268,25 +242,25 @@ h1{
     padding: 10px 20px;
     font-size: 16px;
     background-color: #d40767;
-    color: #dff3e3;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
 }
-  
+
   #startButton:hover {
     background-color: #e5bedd;
     color: #8b0453; }
 
-  
   .lemon{
-    position: absolute;
-    top: -50px;
-    left: calc(100% * random());
-    animation: fall 3s linear infinite, moveLeftRight 6s linear infinite alternate;
-    font-size: 40px; /* Adjust the size of the emoji as needed */
-  }
+      position: absolute;
+      top: -50px;
+      left: calc(100% * random());
+      animation: fall 3s linear infinite, moveLeftRight 6s linear infinite alternate;
+      font-size: 40px; 
+    }
+    
   
   @keyframes fall {
     0% { transform: translateY(-50px); }
@@ -297,4 +271,57 @@ h1{
     0%, 100% { left: calc(100% * random()); }
   }
 
+  @media only screen and (min-width: 700px) {
+
+    .navbar{
+        background-color: transparent;
+      }
+    .navbar a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 15px 30px; 
+      text-decoration: none;
+      margin-right: 20px; 
+      margin-left: 20px;
+      border-radius: 10px; 
+      background-color: #d40767; 
+  }
   
+  .navbar a.active {
+      background-color: #e5bedd;
+      color: #8b0453;
+      text-decoration: underline;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 13px 30px; 
+  }
+  
+  .navbar a.active::before {
+      content: "\1F34B"; /* lemon emoji */
+      position: relative;
+      top: 2px;
+      margin-right: 5px;
+      font-size: 20px;
+  }
+  
+  .navbar a:hover {
+      background-color: #e5bedd;
+      color: #8b0453;
+  }
+
+  .all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .container {
+  grid-template-columns: auto auto;
+}
+  }
+
+  @media only screen and (min-width: 900px) {
+    .container {
+      grid-template-columns: auto auto auto;
+    }
+  }
